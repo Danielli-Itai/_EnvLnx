@@ -9,8 +9,8 @@ function LnxVersion()
 function LnxUpdate()
 {
 	sudo apt-get update -y
+	sudo apt upgrade -y	
 	sudo apt autoremove -y
-	sudo apt upgrade -y
 }
 
 #upgrade to latest release version(long term support).
