@@ -11,5 +11,5 @@ function LnxUpgrade()
 {
 	sudo apt-get update -y && sudo apt-get upgrade -y
 	sudo apt install update-manager-core
-	sudo do-release-upgrade -y
+	sudo do-release-upgrade
 }
