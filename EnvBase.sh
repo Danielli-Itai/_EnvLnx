@@ -16,8 +16,8 @@ function LnxUpdate()
 #upgrade to latest release version(long term support).
 function LnxUpgrade()
 {
-	sudo apt-get update -y
-	sudo apt-get upgrade -y
+	LnxUpdate
+	
 	sudo apt install update-manager-core
 	sudo do-release-upgrade
 }
