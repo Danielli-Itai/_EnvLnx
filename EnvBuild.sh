@@ -30,3 +30,24 @@ function EnvGccCrossInstall()
 	sudo apt-get install -y binutils-arm-linux-gnueabi
 
 }
+
+
+
+function EnGccInfo()
+{
+	gcc --version
+	which gcc
+	man gcc
+}
+
+# arm-none-eabi-gcc: -Arch = ARM -Vendor = N/A -OS = None (Bare-Metal) -ABI = EABI
+#arm-linux-gnueabi-gcc:	-Arch = ARM -Vendor = N/A -OS = Linux OS -ABI = GNUEABI
+function EnvGccList()
+{
+	sudo ls –la /usr/bin/*gcc
+	
+	#Showd all tools in the Cross-Compiler Toolchain
+	ls –la /usr/bin/arm-none-eabi*
+
+	
+}
