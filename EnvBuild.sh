@@ -36,7 +36,7 @@ function EnvGccCrossInstall()
 
 
 
-function EnGccInfo()
+function EnvGccInfo()
 {
 	gcc --version
 	which gcc
