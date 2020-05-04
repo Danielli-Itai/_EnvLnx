@@ -2,11 +2,8 @@
 #build commands
 
 
-#Get Gcc version.
-function EnvGccVer()
-{
-	gcc --version
-}
+
+
 
 #install GCC build tools.
 function EnvGccInstall()
@@ -24,14 +21,24 @@ function EnvGccInstall()
 
 #install GCC cross build tools for ARM.
 # For using this GCC in the build process write:	CC=arm-linux-gnueabihf-gcc make
-#arm-none-eabi-gcc: -Arch = ARM -Vendor = N/A -OS = None (Bare-Metal) -ABI = EABI
-#arm-linux-gnueabi-gcc:	-Arch = ARM -Vendor = N/A -OS = Linux OS -ABI = GNUEABI
+
+
 function EnvGccCrossInstall()
 {
+	#arm-none-eabi-gcc:
+	#	-Arch = ARM -Vendor = N/A -OS = None (Bare-Metal) -ABI = EABI
+	sudo apt-get install -y gcc-arm-none-eabi
+	sudo apt-get install -y gcc-arm-none-eabi
+	sudo apt-get install -y binutils-arm-none-eabi
+	sudo apt-get install -y gdb-arm-none-eabi
+	sudo apt-get install -y openocd
+	
+	#arm-linux-gnueabi-gcc:
+	#	-Arch = ARM -Vendor = N/A -OS = Linux OS -ABI = GNUEABI	
 	sudo apt-get install -y gcc-arm-linux-gnueabi
-	#sudo apt-get install -y gcc-arm-linux-gnueabihf
+	#GNU C compiler for the armhf architecture
+	sudo apt-get install -y gcc-arm-linux-gnueabihf
 	sudo apt-get install -y binutils-arm-linux-gnueabi
-
 }
 
 
@@ -40,12 +47,12 @@ function EnvGccInfo()
 {
 	gcc --version
 	which gcc
-	man gcc
+	#man gcc
 
-	sudo ls –la /usr/bin/*gcc
+	sudo ls -la /usr/bin/*gcc
 	
 	#Showd all tools in the Cross-Compiler Toolchain
-	ls –la /usr/bin/arm-none-eabi*
+	sudo ls -la /usr/bin/arm-none-eabi*
 
 }
 
