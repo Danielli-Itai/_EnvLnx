@@ -6,5 +6,7 @@
 
 echo 'Environment setup'
 source ~/_EnvLnx/EnvBase.sh
-source ~/_EnvLnx/EnvTools.sh
 source ~/_EnvLnx/EnvBuild.sh
+source ~/_EnvLnx/EnvDev.sh
+source ~/_EnvLnx/EnvTools.sh
+
