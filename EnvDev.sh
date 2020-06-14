@@ -11,5 +11,7 @@ function EnvGitInstall()
 
 function EnvGitClone()
 {
+	cd ~/
+	rm -rf ~/_EnvLnx
 	git clone https://github.com/Danielli-Itai/_EnvLnx.git
 }
