@@ -57,3 +57,14 @@ function EnvGitClone()
 	GitClone _EnvLnx
 	GitClone NodeNlpServer
 }
+
+
+FILES=$WORK_DIR/*
+for f in $FILES
+do
+	_FILE=$WORK_DIR/$f/$ENV_SETUP_FILE
+	if test -f "$_FILE"; then
+		echo "$_FILE exists."
+		source $$_FILE
+	fi
+done
