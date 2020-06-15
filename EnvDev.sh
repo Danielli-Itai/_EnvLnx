@@ -3,6 +3,25 @@
 export	 export GIT_USER=Danielli-Itai
 export	 export GIT_USER_REPOS=https://$GIT_USER@github.com/Danielli-Itai
 
+
+
+
+
+#Install Dode environment.
+function EnvNodeInstall()
+{
+	#install nodejs.
+	sudo apt install build-essential -y
+	sudo apt install nodejs -y
+	nodejs -v
+	
+	sudo apt install npm -y
+}
+
+
+
+
+
 #install git - tested on UBUNTU 18.04.
 function EnvGitInstall()
 {
