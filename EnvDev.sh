@@ -1,7 +1,11 @@
 #!/bin/bash
 
-export	 export GIT_USER=Danielli-Itai
-export	 export GIT_USER_REPOS=https://$GIT_USER@github.com/Danielli-Itai
+export	GIT_USER=Danielli-Itai
+export	GIT_USER_REPOS=https://$GIT_USER@github.com/Danielli-Itai
+
+#Every project should have this file for
+#providing environment functions and variables.
+export	ENV_SETUP_FILE=EnvSetup.sh
 
 
 
@@ -14,8 +18,6 @@ function EnvNodeInstall()
 	sudo apt install build-essential -y
 	sudo apt install nodejs -y
 	nodejs -v
-	
-	sudo apt install npm -y
 }
 
 
@@ -39,7 +41,7 @@ function GitClone()
 	git clone $GIT_USER_REPOS/$1.git
 	
 	#incase a setup file exists call the setup file.
-	_FILE=$WORK_DIR/$1/Setup.sh
+	_FILE=$WORK_DIR/$1/$ENV_SETUP_FILE
 	if test -f "$_FILE"; then
 		echo "$_FILE exists."
 		source $WORK_DIR/$1/Setup.sh
