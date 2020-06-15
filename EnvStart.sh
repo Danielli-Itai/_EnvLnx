@@ -8,11 +8,35 @@ echo 'Environment setup'
 export WORK_DIR=~
 
 
+#environment setup files provid environment functions and variables.
+export	ENV_SETUP_FILE=EnvSetup.sh
 
 
 
+
+
+#Search for environment setup files and call them.
+function EnvSetup()
+{
+    FILES=$1/*
+    for f in $FILES
+    do
+	_FILE=$f/$ENV_SETUP_FILE
+	if test -f "$_FILE"; then
+	    echo "$_FILE exists."
+	    source $_FILE
+	fi
+    done
+}
+
+
+
+
+#Environment initialization.
 source ~/_EnvLnx/EnvBase.sh
 source ~/_EnvLnx/EnvBuild.sh
 source ~/_EnvLnx/EnvDev.sh
 source ~/_EnvLnx/EnvTools.sh
 
+#Call work directory environment setup files.
+EnvSetup $WORK_DIR
