@@ -44,7 +44,7 @@ function GitClone()
 	_FILE=$WORK_DIR/$1/$ENV_SETUP_FILE
 	if test -f "$_FILE"; then
 		echo "$_FILE exists."
-		source $WORK_DIR/$1/Setup.sh
+		source $WORK_DIR/$1/$ENV_SETUP_FILE
 	fi
 }
 
