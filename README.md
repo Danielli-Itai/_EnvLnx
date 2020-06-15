@@ -7,7 +7,9 @@ this repository contains linux environment files with extensions which provides 
 
 #Setting up
 Add 'EnvStart.sh' file to be called automatically when using the bash terminal
-Use the command 'grdit ~/.bashrc' for adding the following line to the ~/.bashrc file.
+For adding the following line to the ~/.bashrc file
+Use the command 'grdit ~/.bashrc' 
+Or the command 'nano ~/.bashrc' 
 
 '#Evironment initialization'
 'source ~/_EnvLnx/EnvStart.sh'

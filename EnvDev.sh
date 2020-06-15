@@ -3,9 +3,6 @@
 export	GIT_USER=Danielli-Itai
 export	GIT_USER_REPOS=https://$GIT_USER@github.com/Danielli-Itai
 
-#Every project should have this file for
-#providing environment functions and variables.
-export	ENV_SETUP_FILE=EnvSetup.sh
 
 
 
@@ -18,6 +15,8 @@ function EnvNodeInstall()
 	sudo apt install build-essential -y
 	sudo apt install nodejs -y
 	nodejs -v
+	
+	sudo apt install npm -y
 }
 
 
@@ -59,18 +58,7 @@ function EnvGitClone()
 }
 
 
-function EnvDevSetup()
-{
-    FILES=$WORK_DIR/*
-    for f in $FILES
-    do
-	_FILE=$f/$ENV_SETUP_FILE
-	if test -f "$_FILE"; then
-	    echo "$_FILE exists."
-	    source $_FILE
-	fi
-    done
-}
+
 
 
 
