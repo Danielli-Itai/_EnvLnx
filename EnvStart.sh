@@ -5,7 +5,7 @@
 # source /media/sf_C_DRIVE/_MicroSystem.TrunkWeb/_EnvLnx/EnvStart.sh
 
 echo 'Environment setup'
-export WORK_DIR='~'
+export WORK_DIR=~
 
 
 

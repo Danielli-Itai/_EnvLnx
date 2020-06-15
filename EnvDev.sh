@@ -25,7 +25,7 @@ function EnvGitClone()
 #	cd ~/
 #	rm -rf ~/_EnvLnx
 #	git clone $GIT_USER_REPOS/_EnvLnx.git
-	GitClone(_EnvLnx)
+	GitClone _EnvLnx
 	
-	https://github.com/Danielli-Itai/NodeNlpServer.git
+#	https://github.com/Danielli-Itai/NodeNlpServer.git
 }
