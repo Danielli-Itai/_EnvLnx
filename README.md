@@ -12,3 +12,4 @@ Use the command 'grdit ~/.bashrc' for adding the following line to the ~/.bashrc
 '#Evironment initialization'
 'source ~/_EnvLnx/EnvStart.sh'
 
+
