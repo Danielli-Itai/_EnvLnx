@@ -2,7 +2,7 @@
 
 export	 export GIT_USER_REPOS=https://github.com/Danielli-Itai
 
-
+#install git - tested on UBUNTU 18.04.
 function EnvGitInstall()
 {
 	sudo apt-get update
@@ -11,8 +11,7 @@ function EnvGitInstall()
 }
 
 
-#clone git repository.
-#parameter: repository name
+#clone git repository prm1: repository name
 function GitClone()
 {
 	cd $WORK_DIR
@@ -22,10 +21,6 @@ function GitClone()
 
 function EnvGitClone()
 {
-#	cd ~/
-#	rm -rf ~/_EnvLnx
-#	git clone $GIT_USER_REPOS/_EnvLnx.git
 	GitClone _EnvLnx
-	
-#	https://github.com/Danielli-Itai/NodeNlpServer.git
+	GitClone NodeNlpServer
 }
