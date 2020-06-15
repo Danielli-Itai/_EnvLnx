@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export	 export GIT_USER_REPOS=https://github.com/Danielli-Itai
+export	 export GIT_USER=Danielli-Itai
+export	 export GIT_USER_REPOS=https://$GIT_USER@github.com/Danielli-Itai
 
 #install git - tested on UBUNTU 18.04.
 function EnvGitInstall()
@@ -18,9 +19,11 @@ function GitClone()
 	rm -rf $WORK_DIR/$1
 	git clone $GIT_USER_REPOS/$1.git
 	
+	#incase a setup file exists call the setup file.
 	_FILE=$WORK_DIR/$1/Setup.sh
 	if test -f "$_FILE"; then
 		echo "$_FILE exists."
+		source $WORK_DIR/$1/Setup.sh
 	fi
 }
 
