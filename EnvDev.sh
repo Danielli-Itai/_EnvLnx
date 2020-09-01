@@ -104,109 +104,6 @@ function Neo4jInstall
 
 }
 
-function DswarmInstall()
-{
-	#1. install system packages required for building the software
-	sudo apt-get install --no-install-recommends --yes git-core maven nodejs npm build-essential	
-
-	#2. create ssh key
-	#Saved at /home/itaida/.ssh/id_rsa/gihub_key.pub
-	ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa -N ''
-	ssh-keygen -t rsa -b 4096 -C "Danielli.Itai@gmail.com"
-	
-	#3. add ssh key to to your github user profile
-	eval "$(ssh-agent -s)"
-	ssh-add ~/.ssh/id_rsa
-	
-	# Copies the contents of the id_rsa.pub file to your clipboard	
-	sudo apt-get install xclip
-	xclip -sel clip < ~/.ssh/id_rsa.pub
-
-	
-	
-	mkdir	$DSWARM_DIR
-	cd 	$PROJ_DIR/_DSwarm
-
-	
-	#4. clone repositories (not as root!)
-	git clone --branch builds/unstable git@github.com:dswarm/dswarm.git
-	git clone --branch master git@github.com:dswarm/dswarm-graph-neo4j.git
-	git clone --branch builds/unstable git@github.com:dswarm/dswarm-backoffice-web.git
-
-	#5. install Java for the backend - D:SWARM requires Java 8, which is no longer available in the default package sources
-	sudo add-apt-repository ppa:webupd8team/java
-	sudo apt-get update
-	sudo apt-get install oracle-java8-installer
-	sudo apt-get install oracle-java8-set-default
-
-	#	verify your java version with
-	java -version 2>&1 | grep -q "1.8" && echo "OK, Java 8 is available" || echo "Uh oh, Java 8 is not available"
-
-	
-	#12. configure d:swarm
-	#Place a file named dswarm.conf somewhere in your filesystem and put in the following content
-	#cat <<EOF>>dswarm.conf
-	#dswarm.db.metadata.username=foo
-	#dswarm.db.metadata.password=bar
-	#EOF
-
-
-
-
-	#13. build neo4j extension
-	pushd dswarm-graph-neo4j
-	mvn -U -PRELEASE -DskipTests clean package
-	popd
-	mv dswarm-graph-neo4j/target/graph-1.2-jar-with-dependencies.jar dswarm-graph-neo4j.jar
-
-	#14. build backend
-
-	pushd dswarm
-	mvn -U -DskipTests clean install -Dconfig.file=/path/to/dswarm.conf
-	popd
-
-	#note: Please specify the path to your custom d:swarm config,
-	# if it is not located at the root directory of the d:swarm backend repository.
-	# Otherwise, you can run the maven task with argument -Pdswarm-conf
-	# (which looks at the root directory of the d:swarm backend repository for a d:swarm config named dswarm.conf)
-
-	#15. build frontend
-	pushd dswarm-backoffice-web; pushd yo
-	npm install
-	bower install
-	STAGE=unstable DMP_HOME=../../dswarm grunt build
-	popd
-	rsync --delete --verbose --recursive yo/dist/ yo/publish
-	popd
-
-	#note: npm install may needs to be executed as root
-
-	#These steps require root level access
-	#16. wire everything together-lookout for the correct path (/home/user)
-	sudo cp /home/user/dswarm-graph-neo4j.jar /usr/share/neo4j/plugins/
-
-	#17. restart everything, if needed
-	sudo	/etc/init.d/mysql restart
-	sudo	/etc/init.d/neo4j-service restart
-
-	#18. initialize/reset database - This step requires less privileged access
-	#When running the backend the first time, the MySQL database needs to be initialized.
-	#When updated, a reset is required in case the schema or initial data has changed.
-	#lookout for the correct path (/home/user)
-
-	pushd dswarm/dev-tools
-		python reset-dbs.py \
-		  --persistence-module=../persistence \
-		  --user=dmp \
-		  --password=dmp \
-		  --db=dmp \
-		  --neo4j=http://localhost:7474/graph
-
-	#Or provide the credentials and values you configured.
-	#Check python reset-dbs.py --help for additional information.
-}
-
-
 #clone git repository prm1: repository name
 function GitClone()
 {
@@ -222,14 +119,32 @@ function GitClone()
 	fi
 }
 
-function EnvGitClone()
+function NlpGitClone()
 {
 	git config --global user.name 'Danielli-Itai'
 	git config --global user.email 'Danielli.Itai@gmail.com'
 	git config --global user.password 'Guy1Alon2Maya3'
 	
 	GitClone _EnvLnx
+	GitClone PyBase
+	GitClone PyBaseNlp
+	GitClone PyBaseGUI
+	GitClone PyBaseCode
+	
+	GitClone PyCrawlerGit
+	GitClone PyCrawlerCode
+	GitClone PyCrawlerInterface
+	
 	GitClone NodeNlpServer
 }
 
+function BioGitClone()
+{
+	git config --global user.name 'Danielli-Itai'
+	git config --global user.email 'Danielli.Itai@gmail.com'
+	git config --global user.password 'Guy1Alon2Maya3'
+	
+	GitClone _EnvLnx
+	GitClone PyBioImmunedb
+}
 
