@@ -1,5 +1,5 @@
-#bash
-#build commands
+#!/bin/bash
+
 
 
 
