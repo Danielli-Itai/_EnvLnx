@@ -15,7 +15,7 @@ export	ENV_SETUP_FILE=EnvSetup.sh
 
 
 
-#Search for environment setup files and call them.
+#SearchGit for environment setup files and call them.
 function EnvSetup()
 {
     FILES=$1/*
