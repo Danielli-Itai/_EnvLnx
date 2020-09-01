@@ -32,7 +32,7 @@ function EnvGitInstall()
 }
 
 
-<<<<<<< HEAD
+
 export	DSWARM_DIR=$PROJ_DIR/_DSwarm
 export	DSWARM_DATA_DIR=$SWARM_DIR/_Data/
 function Neo4jInstall
@@ -205,7 +205,8 @@ function DswarmInstall()
 	#Or provide the credentials and values you configured.
 	#Check python reset-dbs.py --help for additional information.
 }
-=======
+
+
 #clone git repository prm1: repository name
 function GitClone()
 {
@@ -231,9 +232,4 @@ function EnvGitClone()
 	GitClone NodeNlpServer
 }
 
-
-
-
-
->>>>>>> 0f9e1beebdceab73b4c3993e2dcfdd2ea3c7f572
 
