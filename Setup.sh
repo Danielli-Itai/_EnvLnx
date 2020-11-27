@@ -17,6 +17,8 @@ function GitSetup()
 
   echo 'Git password ?'
   read pass
+  echo $pass
+  
   # Set global credentials.
   sudo git config --global user.name $1
 	sudo git config --global user.email $2
