@@ -121,10 +121,6 @@ function GitClone()
 
 function NlpGitClone()
 {
-	git config --global user.name 'Danielli-Itai'
-	git config --global user.email 'Danielli.Itai@gmail.com'
-	git config --global user.password 'Guy1Alon2Maya3'
-	
 	GitClone _EnvLnx
 	GitClone PyBase
 	GitClone PyBaseNlp
@@ -140,10 +136,6 @@ function NlpGitClone()
 
 function BioGitClone()
 {
-	git config --global user.name 'Danielli-Itai'
-	git config --global user.email 'Danielli.Itai@gmail.com'
-	git config --global user.password 'Guy1Alon2Maya3'
-	
 	GitClone _EnvLnx
 	GitClone PyBioImmunedb
 }
