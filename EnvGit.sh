@@ -28,11 +28,6 @@ function GitInformation()
 # and cache git password for 1 hour.'
 function GitSetup()
 {
-	# Install Github.
-	sudo apt-get update
-	sudo apt install git-all -y
-
-
 	# Set global credentials.
 	echo 'Git user name ?'
 	read user
