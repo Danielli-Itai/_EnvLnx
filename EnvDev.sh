@@ -1,4 +1,5 @@
 #!/bin/bash
+#Keep linux End of line conversion.
 echo "Sw development environment."
 
 
