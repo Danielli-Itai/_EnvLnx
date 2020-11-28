@@ -5,13 +5,6 @@ echo "Git environment."
 
 
 
-#Show git information.
-function GtiInformation()
-{
-  sudo git --version
-  sudo git config --list
-}
-
 
 #install git - tested on UBUNTU 18.04.
 function GitInstall()
@@ -19,6 +12,13 @@ function GitInstall()
 	sudo apt-get update
 	sudo apt install git-all
 	git --version
+}
+
+#Show git information.
+function GtiInformation()
+{
+  sudo git --version
+  sudo git config --list
 }
 
 
