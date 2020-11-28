@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export	GIT_USER=Danielli-Itai
-export	GIT_USER_REPOS=https://$GIT_USER@github.com/Danielli-Itai
 
 
 
@@ -19,17 +17,6 @@ function EnvNodeInstall()
 	sudo apt install npm -y
 }
 
-
-
-
-
-#install git - tested on UBUNTU 18.04.
-function EnvGitInstall()
-{
-	sudo apt-get update
-	sudo apt install git-all
-	git --version
-}
 
 
 
@@ -104,20 +91,6 @@ function Neo4jInstall
 
 }
 
-#clone git repository prm1: repository name
-function GitClone()
-{
-	cd $WORK_DIR
-	rm -rf $WORK_DIR/$1
-	git clone $GIT_USER_REPOS/$1.git
-	
-	#incase a setup file exists call the setup file.
-	_FILE=$WORK_DIR/$1/$ENV_SETUP_FILE
-	if test -f "$_FILE"; then
-		echo "$_FILE exists."
-		source $WORK_DIR/$1/$ENV_SETUP_FILE
-	fi
-}
 
 function NlpGitClone()
 {
