@@ -17,8 +17,8 @@ function GitInstall()
 #Show git information.
 function GtiInformation()
 {
-  sudo git --version
-  sudo git config --list
+	sudo git --version
+	sudo git config --list
 }
 
 
