@@ -1,22 +1,19 @@
 #!/bin/bash
+echo  "*********************************"
+echo  "       Environment setup         "
+echo  "*********************************"
+echo "For environment setup call this file from the bashrc initialization file."
+echo "# source /media/sf_C_DRIVE/_MicroSystem.TrunkWeb/_EnvLnx/EnvStart.sh"
 
 
 
-export HOME_DIR=~
-export ENV_DIR=$HOME_DIR/_EnvLnx
-export PROJ_DIR=$HOME_DIR/_SwPrjects
-
-# For environment setup add this fil to the bashrc initialization file.
-# using the following command-line.
-# source /media/sf_C_DRIVE/_MicroSystem.TrunkWeb/_EnvLnx/EnvStart.sh
 
 
 echo 'Environment setup'
+export HOME_DIR=~
 export WORK_DIR=~
-
-
-#environment setup files provid environment functions and variables.
-export	ENV_SETUP_FILE=EnvSetup.sh
+export ENV_DIR=$HOME_DIR/_EnvLnx
+export PROJ_DIR=$HOME_DIR/_SwPrjects
 
 
 
@@ -43,7 +40,9 @@ function EnvSetup()
 source ~/_EnvLnx/EnvBase.sh
 source ~/_EnvLnx/EnvBuild.sh
 source ~/_EnvLnx/EnvDev.sh
+source ~/_EnvLnx/EnvDocker.sh
+source ~/_EnvLnx/EnvGit.sh
 source ~/_EnvLnx/EnvTools.sh
 
 #Call work directory environment setup files.
-EnvSetup $WORK_DIR
+#EnvSetup $WORK_DIR

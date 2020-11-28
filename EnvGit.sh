@@ -1,10 +1,6 @@
 #!/bin/bash
-
-
-
-
-export	GIT_USER=Danielli-Itai
-export	GIT_USER_REPOS=https://$GIT_USER@github.com/Danielli-Itai
+echo
+echo "Git environment"
 
 
 

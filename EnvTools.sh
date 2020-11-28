@@ -1,4 +1,9 @@
 #!/bin/bash
+echo
+echo "Tools environment"
+
+
+
 
 
 function EnvSshInstall()
@@ -11,6 +16,7 @@ function EnvSshInstall()
 	#Test it by login into the system using
 	ssh itaida@itaida-VirtualBox
 }
+
 
 function EnvToolsInstall()
 {
