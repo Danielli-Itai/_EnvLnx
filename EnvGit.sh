@@ -1,9 +1,15 @@
 #!/bin/bash
-echo
-echo "Git environment"
+echo "Git environment."
 
 
 
+
+#Show git information.
+function GtiInformation()
+{
+  sudo git --version
+  sudo git config --list
+}
 
 
 #install git - tested on UBUNTU 18.04.
@@ -43,21 +49,14 @@ function GitSetup()
 }
 
 
-#Show git information.
-function GtiInfo()
-{
-  git --version
-  git config --list
-}
-
 
 #clone git repository prm1: repository name
 function GitClone()
 {
-	rm -rf $WORK_DIR/$1
-	git clone $GIT_USER_REPOS/$1.git
+	sudo rm -rf $WORK_DIR/$1
+	sudo git clone $GIT_USER_REPOS/$1.git
 
-  git clone "https://$GIT_USER:$GIT_PASS@github.com/$GIT_USER/$1.git"
+  sudo git clone "https://$GIT_USER:$GIT_PASS@github.com/$GIT_USER/$1.git"
 #  git clone 'https://'$GIT_USER:$GIT_PASS'@github.com/'GIT_USER'/'$1'.git'
 
 	#incase a setup file exists call the setup file.

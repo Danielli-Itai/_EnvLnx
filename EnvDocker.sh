@@ -1,5 +1,4 @@
 #!/bin/bash
-echo
-echo "Docker environment"
+echo "Docker environment."
 
 

@@ -1,6 +1,5 @@
 #!/bin/bash
-echo
-echo "Tools environment"
+echo "Tools environment."
 
 
 

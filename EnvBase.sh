@@ -1,7 +1,9 @@
 #!/bin/bash
+echo "Baseic environment."
 
-echo
-echo "Baseic environment functions"
+
+
+
 
 #get the linux version.
 function LnxVersion()

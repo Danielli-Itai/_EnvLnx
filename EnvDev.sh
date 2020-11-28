@@ -1,6 +1,5 @@
 #!/bin/bash
-echo
-echo "Sw development environment"
+echo "Sw development environment."
 
 
 
