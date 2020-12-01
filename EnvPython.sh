@@ -18,7 +18,7 @@ function PyPull()
 
 	#Move to folder and install all dependencies.
 	cd $1
-	pip3 install -y -r requirements.txt
+	pip3 install -r requirements.txt
 
 	#Return to root folder.
 	cd ..
