@@ -8,6 +8,8 @@ echo "MySql environment."
 
 function MySqlInstall()
 {
+	_FunctionStarts MySqlInstall
+	
 	sudo apt update
 	sudo apt upgrade
 	
