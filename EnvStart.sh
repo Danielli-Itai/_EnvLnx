@@ -36,6 +36,15 @@ function EnvSetup()
 
 
 
+# Dispaly function name at startup.
+function _FunctionStarts
+{
+	echo	*********************** $1 ***********************
+}
+
+
+
+
 
 #Environment initialization.
 source ./_EnvLnx/EnvBase.sh
@@ -45,6 +54,7 @@ source ./_EnvLnx/EnvDocker.sh
 source ./_EnvLnx/EnvGit.sh
 source ./_EnvLnx/EnvTools.sh
 source ./_EnvLnx/EnvPython.sh
+source ./_EnvLnx/EnvMySql.sh
 
 
 #Call work directory environment setup files.
