@@ -38,12 +38,14 @@ function EnvSetup()
 
 
 #Environment initialization.
-source ~/_EnvLnx/EnvBase.sh
-source ~/_EnvLnx/EnvBuild.sh
-source ~/_EnvLnx/EnvDev.sh
-source ~/_EnvLnx/EnvDocker.sh
-source ~/_EnvLnx/EnvGit.sh
-source ~/_EnvLnx/EnvTools.sh
+source ./_EnvLnx/EnvBase.sh
+source ./_EnvLnx/EnvBuild.sh
+source ./_EnvLnx/EnvDev.sh
+source ./_EnvLnx/EnvDocker.sh
+source ./_EnvLnx/EnvGit.sh
+source ./_EnvLnx/EnvTools.sh
+source ./_EnvLnx/EnvPython.sh
+
 
 #Call work directory environment setup files.
 #EnvSetup $WORK_DIR
