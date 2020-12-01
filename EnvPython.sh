@@ -24,4 +24,7 @@ function PyPull()
 	cd ..
 }
 
-
+function PyRun()
+{
+	python3 $1
+}
