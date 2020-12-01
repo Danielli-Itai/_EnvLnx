@@ -38,6 +38,7 @@ function MySqlShell()
 	sudo mysql -u root -p
 }
 
+
 function MySqlInfo()
 {
 	echo "MySql Port:"
@@ -49,4 +50,7 @@ function MySqlInfo()
 	exit;
 }
 
-
+function MySqlRunScript
+{
+	mysql -h "127.0.0.1" -u "root" "-p " < $1
+}
