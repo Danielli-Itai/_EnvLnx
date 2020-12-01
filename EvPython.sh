@@ -10,5 +10,21 @@ function PyInstall()
 }
 
 
+echo "Pull Python repository and Install."
+function PyPull()
+{
+	# remove existing repository.
+	sudo rm -rf $1
+
+	#Pull latest version from Github.
+	git clone https://github.com/Danielli-Itai/$1.git
+
+	#Move to folder and install all dependencies.
+	cd $1
+	pip3 install -r requirements.txt
+
+	#Return to root folder.
+	cd ..
+}
 
 

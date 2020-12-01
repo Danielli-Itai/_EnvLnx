@@ -75,7 +75,7 @@ function Neo4jInstall
 	echo	'edit /etc/neo4j/neo4j-server.properties and at line 24, disable authentication'
 	echo	'dbms.security.auth_enabled=false'
 
-    	echo	'at line 75 and add our graph extension'
+    echo	'at line 75 and add our graph extension'
 	echo	'org.neo4j.server.thirdparty_jaxrs_classes=org.dswarm.graph.resources=/graph'
 
 	echo	'(optional) specify IP address'
