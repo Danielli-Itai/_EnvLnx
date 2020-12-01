@@ -1,7 +1,7 @@
 #!/bin/bash
 #Coder apprentice environment entry.
 echo "MySql environment."
-
+#https://docs.rackspace.com/support/how-to/install-mysql-server-on-the-ubuntu-operating-system/
 
 
 
@@ -33,5 +33,20 @@ function MySqlInstall()
 	sudo systemctl enable mysql
 }
 
+function MySqlShell()
+{
+	sudo mysql -u root -p
+}
+
+function MySqlInfo()
+{
+	echo "MySql Port:"
+	sudo netstat -tlnp | grep mysql
+
+	echo Connect to MySql
+	sudo mysql -u root -p
+	show databases;
+	exit;
+}
 
 
