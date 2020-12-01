@@ -13,9 +13,6 @@ function PyInstall()
 echo "Pull Python repository and Install."
 function PyPull()
 {
-	# remove existing repository.
-	sudo rm -rf $1
-
 	#Pull latest version from Github.
 	git clone https://github.com/Danielli-Itai/$1.git
 
