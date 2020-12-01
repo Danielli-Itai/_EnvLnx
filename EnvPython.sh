@@ -6,7 +6,7 @@
 
 function PyInstall()
 {
-	sudo apt install python3-pip
+	sudo apt install -y python3-pip
 }
 
 
@@ -18,7 +18,7 @@ function PyPull()
 
 	#Move to folder and install all dependencies.
 	cd $1
-	pip3 install -r requirements.txt
+	pip3 install -y -r requirements.txt
 
 	#Return to root folder.
 	cd ..
