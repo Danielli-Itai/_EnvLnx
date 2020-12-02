@@ -4,29 +4,52 @@
 
 
 
+
 function PyInstall()
 {
 	sudo apt install -y python3-pip
 }
 
 
-echo "Pull Python repository and Install."
+# Pull Python repository and Install.
 function PyClone()
 {
 	# Pull latest version from Github.
 	echo "*** Cloning $1"
-	git clone https://github.com/Danielli-Itai/$1.git
+	sudo git clone https://github.com/Danielli-Itai/$1.git
+}
+
+
+# Pull Python repository and Install.
+function PyInstall()
+{
+	PyClone $1
 
 	# Move to folder and install all dependencies.
-	echo "Installing dependecies $1"
+	echo "Install repository dependecies $1"
 	cd $1
 	sudo pip3 install -r requirements.txt
 
-	# Return to root folder.
+	# Return to previouse folder.
 	cd ..
 }
 
+
+# Pull Python repository.
+function PyPull()
+{
+	# Move to folder and Pull latest version from Github.
+	echo "*** Pulling $1"
+	cd $1
+	sudo git pull https://github.com/Danielli-Itai/$1.git
+
+	# Return to previouse folder.
+	cd ..
+}
+
+
+# Run a python program in background.
 function PyRun()
 {
-	python3 $1
+	python3 $1 &
 }
