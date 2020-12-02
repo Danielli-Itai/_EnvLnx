@@ -16,5 +16,5 @@ function NodeJsInstall()
 
 function NodeJsRun()
 {
-	sudo node $1	&
+	sudo node $1 &
 }
