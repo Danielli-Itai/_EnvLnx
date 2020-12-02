@@ -5,9 +5,6 @@
 
 
 
-export HOME_DIR=~
-export ENV_DIR=$HOME_DIR/_EnvLnx
-export PROJ_DIR=$HOME_DIR/_SwPrjects
 
 # For environment setup add this fil to the bashrc initialization file.
 # using the following command-line.
@@ -16,6 +13,9 @@ export PROJ_DIR=$HOME_DIR/_SwPrjects
 
 echo 'Environment setup'
 export WORK_DIR=~
+export HOME_DIR=~
+export ENV_DIR=$HOME_DIR/_EnvLnx
+export PROJ_DIR=$HOME_DIR/_SwProjects
 
 
 #environment setup files provid environment functions and variables.

@@ -47,18 +47,70 @@ function GitSetup()
 
 
 #clone git repository prm1: repository name
+#function GitClone()
+#{
+#	sudo rm -rf $WORK_DIR/$1
+#	sudo git clone $GIT_USER_REPOS/$1.git
+#
+#	sudo git clone "https://$GIT_USER:$GIT_PASS@github.com/$GIT_USER/$1.git"
+#
+#	#incase a setup file exists call the setup file.
+#	_FILE=$WORK_DIR/$1/$ENV_SETUP_FILE
+#	if test -f "$_FILE"; then
+#		echo "$_FILE exists."
+#		source $WORK_DIR/$1/$ENV_SETUP_FILE
+#	fi
+#}
+
+
+# Pull Python repository and Install.
 function GitClone()
 {
-	sudo rm -rf $WORK_DIR/$1
-	sudo git clone $GIT_USER_REPOS/$1.git
-
-  sudo git clone "https://$GIT_USER:$GIT_PASS@github.com/$GIT_USER/$1.git"
-#  git clone 'https://'$GIT_USER:$GIT_PASS'@github.com/'GIT_USER'/'$1'.git'
-
-	#incase a setup file exists call the setup file.
-	_FILE=$WORK_DIR/$1/$ENV_SETUP_FILE
-	if test -f "$_FILE"; then
-		echo "$_FILE exists."
-		source $WORK_DIR/$1/$ENV_SETUP_FILE
-	fi
+	# Pull latest version from Github.
+	echo "*** Cloning $1"
+	sudo git clone https://github.com/Danielli-Itai/$1.git
 }
+
+
+# Pull Python repository and Install.
+function GitInstPy()
+{
+	GitClone $1
+
+	# Move to folder and install all dependencies.
+	echo "Install repository dependecies $1"
+	cd $1
+	sudo pip3 install -r requirements.txt
+
+	# Return to previouse folder.
+	cd ..
+}
+
+
+function GitInstNode()
+{
+	GitClone $1
+
+	# Move to folder and install all dependencies.
+	echo "Installing dependecies $1"
+	cd $1
+	sudo npm install
+
+	# Return to root folder.
+	cd ..
+}
+
+
+# Pull Python repository.
+function GitPull()
+{
+	# Move to folder and Pull latest version from Github.
+	echo "*** Pulling $1"
+	cd $1
+	sudo git pull https://github.com/Danielli-Itai/$1.git
+
+	# Return to previouse folder.
+	cd ..
+}
+
+
