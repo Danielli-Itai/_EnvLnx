@@ -69,6 +69,7 @@ function GitClone()
 	# Pull latest version from Github.
 	echo "*** Cloning $1"
 	sudo git clone https://github.com/Danielli-Itai/$1.git
+	chmod -fR 777 $1
 }
 
 
@@ -84,6 +85,7 @@ function GitInstPy()
 
 	# Return to previouse folder.
 	cd ..
+	chmod -fR 777 $1
 }
 
 
@@ -98,6 +100,7 @@ function GitInstNode()
 
 	# Return to root folder.
 	cd ..
+	chmod -fR 777 $1
 }
 
 
@@ -108,9 +111,9 @@ function GitPull()
 	echo "*** Pulling $1"
 	cd $1
 	sudo git pull https://github.com/Danielli-Itai/$1.git
-
 	# Return to previouse folder.
 	cd ..
+	chmod -fR 777 $1
 }
 
 

@@ -12,6 +12,8 @@ function PythonInst()
 	sudo add-apt-repository ppa:deadsnakes/ppa
 	sudo apt install python3.8
 	sudo apt install -y python3-pip
+	
+	sudo apt-get install -y python3-tk
 }
 
 
