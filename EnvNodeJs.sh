@@ -4,13 +4,17 @@
 
 
 
-function NodeInstall()
+function NodeJsInstall()
 {
-	sudo apt install -y python3-pip
+	echo Installing node JS
+	sudo apt update
+	sudo apt install nodejs
+	sudo apt install npm
+	nodejs -v
 }
 
 
 function PyRun()
 {
-	python3 $1
+	node $1	&
 }
