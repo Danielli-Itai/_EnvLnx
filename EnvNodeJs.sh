@@ -14,7 +14,7 @@ function NodeJsInstall()
 }
 
 
-function PyRun()
+function NodeJsRun()
 {
 	node $1	&
 }
