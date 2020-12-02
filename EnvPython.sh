@@ -19,5 +19,5 @@ function PythonInst()
 # Run a python program in background.
 function PyRun()
 {
-	python3 $1 &
+	sudo python3 $1 &
 }
