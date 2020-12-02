@@ -55,6 +55,7 @@ source ./_EnvLnx/EnvGit.sh
 source ./_EnvLnx/EnvTools.sh
 source ./_EnvLnx/EnvPython.sh
 source ./_EnvLnx/EnvMySql.sh
+source ./_EnvLnx/EnvNodeJs.sh
 
 
 #Call work directory environment setup files.

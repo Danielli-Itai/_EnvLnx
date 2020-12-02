@@ -4,14 +4,14 @@
 
 
 
-function PyInstall()
+function NodeInstall()
 {
 	sudo apt install -y python3-pip
 }
 
 
 echo "Pull Python repository and Install."
-function PyClone()
+function NodeClone()
 {
 	# Pull latest version from Github.
 	echo "*** Cloning $1"
@@ -20,7 +20,7 @@ function PyClone()
 	# Move to folder and install all dependencies.
 	echo "Installing dependecies $1"
 	cd $1
-	sudo pip3 install -r requirements.txt
+	sudo npm install
 
 	# Return to root folder.
 	cd ..

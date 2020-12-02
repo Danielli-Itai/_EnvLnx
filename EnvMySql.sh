@@ -50,7 +50,8 @@ function MySqlInfo()
 	exit;
 }
 
+
 function MySqlRunScript
 {
-	mysql -h "127.0.0.1" -u "root" "-p " < $1
+	sudo mysql < $1
 }
