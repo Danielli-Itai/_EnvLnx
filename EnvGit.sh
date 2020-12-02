@@ -41,7 +41,7 @@ function GitSetup()
 #	read pass
 #	sudo git config --global user.password $pass
 
-  sudo git config --global credential.helper 'cache --timeout=3600'
+	sudo git config --global credential.helper 'cache --timeout=3600'
 }
 
 
@@ -69,7 +69,7 @@ function GitClone()
 	# Pull latest version from Github.
 	echo "*** Cloning $1"
 	sudo git clone https://github.com/Danielli-Itai/$1.git
-	chmod -fR 777 $1
+	sudo chmod -fR 777 $1
 }
 
 
@@ -85,7 +85,7 @@ function GitInstPy()
 
 	# Return to previouse folder.
 	cd ..
-	chmod -fR 777 $1
+	sudo chmod -fR 777 $1
 }
 
 
@@ -100,7 +100,7 @@ function GitInstNode()
 
 	# Return to root folder.
 	cd ..
-	chmod -fR 777 $1
+	sudo chmod -fR 777 $1
 }
 
 
@@ -113,7 +113,7 @@ function GitPull()
 	sudo git pull https://github.com/Danielli-Itai/$1.git
 	# Return to previouse folder.
 	cd ..
-	chmod -fR 777 $1
+	sudo chmod -fR 777 $1
 }
 
 
