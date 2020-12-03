@@ -93,24 +93,3 @@ function Neo4jInstall
 }
 
 
-function NlpGitClone()
-{
-	GitClone _EnvLnx
-	GitClone PyBase
-	GitClone PyBaseNlp
-	GitClone PyBaseGUI
-	GitClone PyBaseCode
-	
-	GitClone PyCrawlerGit
-	GitClone PyCrawlerCode
-	GitClone PyCrawlerInterface
-	
-	GitClone NodeNlpServer
-}
-
-function BioGitClone()
-{
-	GitClone _EnvLnx
-	GitClone PyBioImmunedb
-}
-
