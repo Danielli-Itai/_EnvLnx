@@ -41,7 +41,7 @@ function MySqlShell()
 function MySqlPassword()
 {
   echo "This will run mysql shell and ask you to enter new password."
-  sudo mysql < "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'insert_password';
+  sudo mysql < "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'insert_password';"
 }
 
 function MySqlInfo()
