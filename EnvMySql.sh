@@ -33,15 +33,28 @@ function MySqlInstall()
 	sudo systemctl enable mysql
 }
 
+function MySqlRemove()
+{
+	sudo service mysql stop
+	sudo killall -KILL mysql mysqld_safe mysqld
+	sudo apt-get --yes purge mysql-server mysql-client
+	sudo apt-get --yes autoremove --purge
+	sudo apt-get autoclean
+	sudo deluser --remove-home mysql
+	sudo delgroup mysql
+	sudo rm -rf /etc/apparmor.d/abstractions/mysql /etc/apparmor.d/cache/usr.sbin.mysqld /etc/mysql /var/lib/mysql /var/log/mysql* /var/log/upstart/mysql.log* /var/run/mysql
+}
+
+
 function MySqlShell()
 {
-	sudo mysql -u root -p
+	sudo mysql -u root -p 
 }
 
 function MySqlPassword()
 {
   echo "This will run mysql shell and ask you to enter new password."
-  sudo mysql < "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'insert_password';"
+  sudo sudo mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'insert_password';"
 }
 
 function MySqlInfo()
@@ -52,9 +65,18 @@ function MySqlInfo()
 	echo 'Connect to MySql'
 	sudo mysql -u root -p
 	show databases;
-	exit;
 }
 
+
+function MySqlStop()
+{
+	sudo service mysql stop
+}
+
+function MySqlStart()
+{
+	sudo service mysql start
+}
 
 function MySqlRunScript
 {
