@@ -14,6 +14,13 @@ function NodeJsInstall()
 }
 
 
+function NodeJsSetup()
+{
+	cd $1
+	sudo npm install
+	cd ..
+}
+
 function NodeJsRun()
 {
 	sudo node $1 &
