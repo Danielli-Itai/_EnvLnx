@@ -27,3 +27,9 @@ function LnxUpgrade()
 	sudo apt install update-manager-core
 	sudo do-release-upgrade
 }
+
+
+function LnxMemShow()
+{
+	sudo top -o %MEM
+}

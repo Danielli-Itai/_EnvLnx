@@ -25,3 +25,10 @@ function NodeJsRun()
 {
 	sudo node $1 &
 }
+
+# -n number of samples.
+# -b new line for each sample.
+function PyNode()
+{
+	sudo top -b -n 1 -o %MEM | grep node
+}
