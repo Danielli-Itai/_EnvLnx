@@ -100,7 +100,7 @@ function GitInstNode()
 
 	# Return to root folder.
 	cd ..
-	sudo chmod -fR 777 $1
+	#sudo chmod -fR 777 $1
 }
 
 
@@ -113,7 +113,7 @@ function GitPull()
 	sudo git pull https://github.com/Danielli-Itai/$1.git
 	# Return to previouse folder.
 	cd ..
-	sudo chmod -fR 777 $1
+	#sudo chmod -fR 777 $1
 }
 
 
