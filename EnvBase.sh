@@ -37,7 +37,7 @@ function LnxMemShow()
 
 # -n number of samples.
 # -b new line for each sample.
-function PyMemInfo()
+function LnxMemInfo()
 {
 	sudo top -b -n 1 -o %MEM | grep %1
 }
