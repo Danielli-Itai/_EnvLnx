@@ -28,7 +28,7 @@ function NodeJsRun()
 
 # -n number of samples.
 # -b new line for each sample.
-function PyNode()
+function NodeMemInfo()
 {
-	sudo top -b -n 1 -o %MEM | grep node
+	sudo top -b -n 1 -o %MEM | grep $1
 }

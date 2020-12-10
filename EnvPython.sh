@@ -25,9 +25,3 @@ function PyRun()
 	sudo python3 $1 &
 }
 
-# -n number of samples.
-# -b new line for each sample.
-function PyMem()
-{
-	sudo top -b -n 1 -o %MEM | grep python
-}

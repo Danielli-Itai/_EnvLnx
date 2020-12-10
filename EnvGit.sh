@@ -69,7 +69,7 @@ function GitClone()
 	# Pull latest version from Github.
 	echo "*** Cloning $1"
 	sudo git clone https://github.com/Danielli-Itai/$1.git
-	sudo chmod -fR 777 $1
+	#sudo chmod -fR 777 $1
 }
 
 
@@ -85,7 +85,7 @@ function GitInstPy()
 
 	# Return to previouse folder.
 	cd ..
-	sudo chmod -fR 777 $1
+	#sudo chmod -fR 777 $1
 }
 
 

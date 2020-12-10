@@ -29,7 +29,15 @@ function LnxUpgrade()
 }
 
 
+# Memory information.
 function LnxMemShow()
 {
 	sudo top -o %MEM
+}
+
+# -n number of samples.
+# -b new line for each sample.
+function PyMemInfo()
+{
+	sudo top -b -n 1 -o %MEM | grep %1
 }
