@@ -6,6 +6,7 @@ echo "MySql environment."
 
 
 
+
 function MySqlInstall()
 {
 	_FunctionStarts MySqlInstall
@@ -62,9 +63,16 @@ function MySqlInfo()
 	echo "MySql Port:"
 	sudo netstat -tlnp | grep mysql
 
+	echo "run MySqlShell and use the following commands..."
+	echo "Show databases;"
+	echo "SHOW VARIABLES LIKE 'port';"
+	echo "SHOW VARIABLES LIKE 'mysqlx_port';"
+}
+
+function MySqlShell()
+{
 	echo 'Connect to MySql'
 	sudo mysql -u root -p
-	show databases;
 }
 
 

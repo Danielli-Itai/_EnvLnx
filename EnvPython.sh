@@ -25,3 +25,9 @@ function PyRun()
 	sudo python3 $1 &
 }
 
+function PyFreeze()
+{
+	rm -f requirements.txt
+	python -m pip freeze requirements.txt
+	cat requirements.txt
+}
