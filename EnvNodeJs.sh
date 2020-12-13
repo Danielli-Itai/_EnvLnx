@@ -4,12 +4,21 @@
 
 
 
+#install nodejs.
 function NodeJsInstall()
 {
+
+	nodejs -v
+
 	echo Installing node JS
+	
 	sudo apt update
-	sudo apt install nodejs
-	sudo apt install npm
+	
+	sudo apt install build-essential -y	
+	sudo apt install nodejs -y
+	sudo apt install nodejs -y
+	sudo apt install npm -y
+	sudo apt install npm -y
 	nodejs -v
 }
 
@@ -24,6 +33,7 @@ function NodeJsSetup()
 function NodeJsRun()
 {
 	sudo node $1 &
+	disown 
 }
 
 # -n number of samples.

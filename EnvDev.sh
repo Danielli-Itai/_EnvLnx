@@ -7,16 +7,6 @@ echo "Sw development environment."
 
 
 
-#Install Dode environment.
-function EnvNodeInstall()
-{
-	#install nodejs.
-	sudo apt install build-essential -y
-	sudo apt install nodejs -y
-	nodejs -v
-	
-	sudo apt install npm -y
-}
 
 
 

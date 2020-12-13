@@ -23,6 +23,7 @@ function PythonInst()
 function PyRun()
 {
 	sudo python3 $1 &
+	disown
 }
 
 function PyFreeze()
