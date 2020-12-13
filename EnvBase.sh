@@ -28,6 +28,7 @@ function LnxUpgrade()
 	sudo do-release-upgrade
 }
 
+# Edit a text file.
 function LnxFileEdit()
 {
 	nano %1
