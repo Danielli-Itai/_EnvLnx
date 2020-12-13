@@ -31,7 +31,7 @@ function LnxUpgrade()
 # Edit a text file.
 function LnxFileEdit()
 {
-	nano %1
+	sudo nano %1
 }
 
 # Memory information.
