@@ -11,10 +11,10 @@ echo "# source /media/sf_C_DRIVE/_MicroSystem.TrunkWeb/_EnvLnx/EnvStart.sh"
 
 
 echo 'Environment setup'
-export HOME_DIR=~
-export WORK_DIR=~
-export ENV_DIR=$HOME_DIR/_EnvLnx
-export PROJ_DIR=$HOME_DIR/_SwPrjects
+#export HOME_DIR=~
+#export WORK_DIR=~
+#export ENV_DIR=$HOME_DIR/_EnvLnx
+#export PROJ_DIR=$HOME_DIR/_SwPrjects
 
 
 
