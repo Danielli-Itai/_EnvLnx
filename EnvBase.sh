@@ -28,6 +28,10 @@ function LnxUpgrade()
 	sudo do-release-upgrade
 }
 
+function LnxFileEdit()
+{
+	nano %1
+}
 
 # Memory information.
 function LnxMemShow()
