@@ -18,6 +18,27 @@ echo 'Environment setup'
 
 
 
+#Clone new environment from git.
+function EnvClone()
+{
+	sudo git clone https://github.com/Danielli-Itai/_EnvLnx.git
+}
+
+#Pull latest version.
+function EnvPull()
+{
+	sudo git pull https://github.com/Danielli-Itai/_EnvLnx.git
+	source _EnvLnx/EnvStart.sh
+}
+
+#Clear the environment.
+function EnvClear()
+{
+	sudo rm -fr _EnvLnx
+}
+
+
+
 
 
 #SearchGit for environment setup files and call them.
