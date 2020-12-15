@@ -18,6 +18,9 @@ echo 'Environment setup'
 
 
 
+
+
+echo	"Environment version control: EnvClone, EnvPull, EnvClear"
 #Clone new environment from git.
 function EnvClone()
 {
