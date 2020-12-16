@@ -9,7 +9,11 @@ echo "Baseic environment."
 #get the linux version.
 function LnxVersion()
 {
+	
 	lsb_release -a
+	
+	#Kernel version.
+	uname -a
 }
 
 function LnxUpdate()
