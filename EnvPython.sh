@@ -5,7 +5,7 @@
 
 
 
-function PythonInst()
+function PythonInstall()
 {
 	sudo apt update -y
 	sudo apt install software-properties-common
@@ -17,6 +17,21 @@ function PythonInst()
 	sudo apt-get install -y python3-tk
 }
 
+
+# Pull Python repository and Install.
+function PyClone()
+{
+	GitClone $1
+
+	# Move to folder and install all dependencies.
+	echo "Install repository dependecies $1"
+	cd $1
+	sudo pip3 install -r requirements.txt
+
+	# Return to previouse folder.
+	cd ..
+	sudo chmod -fR 777 $1
+}
 
 
 # Run a python program in background.

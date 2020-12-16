@@ -74,37 +74,6 @@ function GitClone()
 }
 
 
-# Pull Python repository and Install.
-function GitInstPy()
-{
-	GitClone $1
-
-	# Move to folder and install all dependencies.
-	echo "Install repository dependecies $1"
-	cd $1
-	sudo pip3 install -r requirements.txt
-
-	# Return to previouse folder.
-	cd ..
-	sudo chmod -fR 777 $1
-}
-
-
-function GitInstNode()
-{
-	GitClone $1
-
-	# Move to folder and install all dependencies.
-	echo "Installing dependecies $1"
-	cd $1
-	sudo npm install
-
-	# Return to root folder.
-	cd ..
-	#sudo chmod -fR 777 $1
-}
-
-
 # Pull Python repository.
 function GitPull()
 {
@@ -114,7 +83,6 @@ function GitPull()
 	sudo git pull https://github.com/Danielli-Itai/$1.git
 	# Return to previouse folder.
 	cd ..
-	#sudo chmod -fR 777 $1
 }
 
 

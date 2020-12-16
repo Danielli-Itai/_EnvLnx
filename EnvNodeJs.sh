@@ -42,3 +42,17 @@ function NodeMemInfo()
 {
 	sudo top -b -n 1 -o %MEM | grep $1
 }
+
+
+function NodeGitClone()
+{
+	GitClone $1
+
+	# Move to folder and install all dependencies.
+	echo "Installing dependecies $1"
+	cd $1
+	sudo npm install
+
+	# Return to root folder.
+	cd ..
+}
