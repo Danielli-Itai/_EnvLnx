@@ -56,13 +56,24 @@ function DockerTest()
 
 
 
-
-echo "Docker commands:DockerImages"
+#https://docs.docker.com
+echo "Docker commands:DockerImages, DockerBuild"
 function DockerImages()
 {
 	echo 'Docker immanges'
-	sudo docker image ls
-	
-	echo echo 'Docker instances'
+	sudo docker image ls	
+	echo
+	echo 'Docker instances'
 	sudo docker ps --all
 }
+
+
+#Build a docker file.
+function DockerBuild()
+{
+	sudo docker build -t $1
+}
+
+
+
+

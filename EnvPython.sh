@@ -37,6 +37,11 @@ function PyClone()
 # Run a python program in background.
 function PyRun()
 {
+	sudo python3 $1
+}
+
+function PyRunDetacht()
+{
 	sudo python3 $1 &
 	disown
 }

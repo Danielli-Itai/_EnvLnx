@@ -32,6 +32,11 @@ function NodeJsSetup()
 
 function NodeJsRun()
 {
+	sudo node $1
+}
+
+function NodeJsRunDetacht()
+{
 	sudo node $1 &
 	disown 
 }
