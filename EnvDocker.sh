@@ -1,12 +1,12 @@
 #!/bin/bash
 #Keep linux End of line conversion.
 #Based on: https://docs.docker.com/
-echo "Docker environment: DockerUninstall, DockerUninstall, DockerInfo."
 
 
 
 
 
+echo "Docker environment: DockerUninstall, DockerUninstall, DockerInfo, DockerTest."
 # Update the apt package index and install packages to allow apt to use a repository over HTTPS.
 #https://docs.docker.com/engine/install/ubuntu/
 function DockerInstall()
@@ -49,13 +49,15 @@ function DockerInfo()
 	sudo docker --version
 }
 
-
 function DockerTest()
 {
-	docker run hello-world
+	sudo docker run hello-world
 }
 
 
+
+
+echo "Docker commands:DockerImages"
 function DockerImages()
 {
 	echo 'Docker immanges'

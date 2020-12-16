@@ -10,7 +10,7 @@ echo "# source /media/sf_C_DRIVE/_MicroSystem.TrunkWeb/_EnvLnx/EnvStart.sh"
 
 
 
-echo 'Environment setup'
+#echo 'Environment setup'
 #export HOME_DIR=~
 #export WORK_DIR=~
 #export ENV_DIR=$HOME_DIR/_EnvLnx
@@ -20,7 +20,7 @@ echo 'Environment setup'
 
 
 
-echo	"Environment version control: EnvClone, EnvPull, EnvClear"
+echo	"Environment version: EnvClone, EnvPull, EnvClear"
 #Clone new environment from git.
 function EnvClone()
 {
