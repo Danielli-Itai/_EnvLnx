@@ -1,15 +1,9 @@
 #!/bin/bash
 #Keep linux End of line conversion.
-echo "Docker environment."
+echo "Docker environment: DockerUninstall, DockerUninstall, DockerInfo."
 
 
 
-
-
-function DockerUninstall()
-{
-	sudo apt-get remove docker docker-engine docker.io containerd runc
-}
 
 
 # Update the apt package index and install packages to allow apt to use a repository over HTTPS.
@@ -34,6 +28,11 @@ function DockerInstall()
 	#Update the apt package index, and install the latest version of Docker Engine and containerd.
 	sudo apt-get update
 	sudo apt-get install docker-ce docker-ce-cli containerd.io
+}
+
+function DockerUninstall()
+{
+	sudo apt-get remove docker docker-engine docker.io containerd runc
 }
 
 
