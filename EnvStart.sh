@@ -30,8 +30,10 @@ function EnvClone()
 #Pull latest version.
 function EnvPull()
 {
+	cd _EnvLnx
 	sudo git pull https://github.com/Danielli-Itai/_EnvLnx.git
 	source _EnvLnx/EnvStart.sh
+	cd ..
 }
 
 #Clear the environment.
