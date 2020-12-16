@@ -1,5 +1,6 @@
 #!/bin/bash
 #Keep linux End of line conversion.
+#Based on: https://docs.docker.com/
 echo "Docker environment: DockerUninstall, DockerUninstall, DockerInfo."
 
 
@@ -30,9 +31,14 @@ function DockerInstall()
 	sudo apt-get install docker-ce docker-ce-cli containerd.io
 }
 
+#Uninstall docker.
 function DockerUninstall()
 {
-	sudo apt-get remove docker docker-engine docker.io containerd runc
+	#Uninstall the Docker Engine, CLI, and Containerd packages.
+	sudo apt-get purge docker-ce docker-ce-cli containerd.io
+	
+	#Delete all images, containers, and volumes.
+	sudo rm -rf /var/lib/docker
 }
 
 
@@ -40,5 +46,21 @@ function DockerUninstall()
 function DockerInfo()
 {
 	sudo docker info
+	sudo docker --version
 }
 
+
+function DockerTest()
+{
+	docker run hello-world
+}
+
+
+function DockerImages()
+{
+	echo 'Docker immanges'
+	sudo docker image ls
+	
+	echo echo 'Docker instances'
+	sudo docker ps --all
+}
