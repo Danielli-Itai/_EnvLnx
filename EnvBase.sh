@@ -38,6 +38,12 @@ function LnxFileEdit()
 	sudo nano %1
 }
 
+# Archive a directory or file.
+function LnxArchive()
+{
+	tar -zcvf $2.tar.gz $1
+}
+
 # Memory information.
 function LnxMemShow()
 {
