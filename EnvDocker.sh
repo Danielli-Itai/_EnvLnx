@@ -6,7 +6,7 @@
 
 
 
-echo "Docker environment: DockerUninstall, DockerUninstall, DockerInfo, DockerTest."
+echo "Docker environment: DockerUninstall, DockerUninstall, DockerInfo, DockerTest, DockerImages, DockerRemove, DockerClear."
 # Update the apt package index and install packages to allow apt to use a repository over HTTPS.
 #https://docs.docker.com/engine/install/ubuntu/
 function DockerInstall()
@@ -68,6 +68,12 @@ function DockerImages()
 }
 
 
+#Run docker image tag.
+function DockerRunInteractive()
+{
+	sudo docker run -i -t $1 /bin/bash
+}
+
 #Rmove docker image or process Id.
 function DockerRemove()
 {
@@ -78,7 +84,7 @@ function DockerRemove()
 #Remove all docker instances.
 function DockerClear()
 {
-	sudo docker rm $(docker ps -a -q)
+	sudo docker rm $(sudo docker ps -a -q)
 }
 
 
