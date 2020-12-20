@@ -1,6 +1,6 @@
 #!/bin/bash
 #Keep linux End of line conversion.
-echo "Git environment."
+echo "Git environment: GitInstall, GitInformation, GitSetup, GitClone, GitPull, GitOverride"
 
 
 
@@ -85,4 +85,10 @@ function GitPull()
 	cd ..
 }
 
-
+function GitOverride()
+{
+	cd $1
+	sudo git fetch --all
+	git reset --hard
+	cd ..
+}

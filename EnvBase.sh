@@ -54,5 +54,5 @@ function LnxMemShow()
 # -b new line for each sample.
 function LnxMemInfo()
 {
-	sudo top -b -n 1 -o %MEM | grep %1
+	sudo top -b -n 1 -o %VIRT | grep $1
 }
