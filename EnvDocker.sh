@@ -68,6 +68,20 @@ function DockerImages()
 }
 
 
+#Rmove docker image or process Id.
+function DockerRemove()
+{
+	sudo docker rm $1
+}
+
+
+#Remove all docker instances.
+function DockerClear()
+{
+	sudo docker rm $(docker ps -a -q)
+}
+
+
 #Build a docker file.
 function DockerBuild()
 {
