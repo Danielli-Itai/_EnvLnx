@@ -16,8 +16,6 @@ function NodeJsInstall()
 	
 	sudo apt install build-essential -y	
 	sudo apt install nodejs -y
-	sudo apt install nodejs -y
-	sudo apt install npm -y
 	sudo apt install npm -y
 	nodejs -v
 }
