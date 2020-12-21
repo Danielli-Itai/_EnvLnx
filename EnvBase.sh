@@ -41,7 +41,7 @@ function LnxFileEdit()
 # Archive a directory or file.
 function LnxArchive()
 {
-	tar -zcvf $2.tar.gz $1
+	sudo tar -zcvf $2.tar.gz $1
 }
 
 # Memory information.
