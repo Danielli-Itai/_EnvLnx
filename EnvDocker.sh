@@ -85,6 +85,7 @@ function DockerRemove()
 function DockerClear()
 {
 	sudo docker rm $(sudo docker ps -a -q)
+	sudo docker rmi $(sudo docker image ls -a -q)
 }
 
 
