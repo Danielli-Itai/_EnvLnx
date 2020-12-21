@@ -1,4 +1,4 @@
-#!/bin/bash+--
+#!/bin/bash
 #Keep linux End of line conversion.
 
 

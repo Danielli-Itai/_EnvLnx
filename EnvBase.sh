@@ -39,8 +39,10 @@ function LnxFileEdit()
 }
 
 # Archive a directory or file.
+# Param1 - source folder/file, Param2 - archive file name.
 function LnxArchive()
 {
+	sudo chmod 777 -R $1
 	sudo tar -zcvf $2.tar.gz $1
 }
 
