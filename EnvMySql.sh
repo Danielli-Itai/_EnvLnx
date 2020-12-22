@@ -47,10 +47,6 @@ function MySqlRemove()
 }
 
 
-function MySqlShell()
-{
-	sudo mysql -u root -p 
-}
 
 function MySqlPassword()
 {

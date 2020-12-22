@@ -88,7 +88,7 @@ function GitPull()
 function GitOverride()
 {
 	cd $1
-	sudo git fetch --all
 	git reset --hard
+	sudo git pull
 	cd ..
 }
