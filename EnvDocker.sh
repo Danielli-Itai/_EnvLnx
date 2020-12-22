@@ -57,7 +57,7 @@ function DockerTest()
 
 
 #https://docs.docker.com
-echo "Docker commands:DockerImages, DockerBuild"
+echo "Docker commands: DockerImages, DockerBuild, DockerRunInteractive, DockerRemove, DockerClear, DockerClearAll"
 function DockerImages()
 {
 	echo 'Docker immanges'
@@ -67,6 +67,11 @@ function DockerImages()
 	sudo docker ps --all
 }
 
+#Build a docker file.
+function DockerBuild()
+{
+	sudo docker build -t $1
+}
 
 #Run docker image tag.
 function DockerRunInteractive()
@@ -80,20 +85,19 @@ function DockerRemove()
 	sudo docker rm $1
 }
 
-
-#Remove all docker instances.
 function DockerClear()
+{
+	sudo docker rm $(sudo docker ps -a -q)
+}
+
+#Remove all docker images and instances.
+function DockerClearAll()
 {
 	sudo docker rm $(sudo docker ps -a -q)
 	sudo docker rmi $(sudo docker image ls -a -q)
 }
 
 
-#Build a docker file.
-function DockerBuild()
-{
-	sudo docker build -t $1
-}
 
 
 

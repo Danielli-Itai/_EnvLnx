@@ -49,12 +49,12 @@ function LnxArchive()
 # Memory information.
 function LnxMemShow()
 {
-	sudo top -o %MEM
+	sudo top -o VIRT
 }
 
 # -n number of samples.
 # -b new line for each sample.
 function LnxMemInfo()
 {
-	sudo top -b -n 1 -o %VIRT | grep $1
+	sudo top -b -n 1 -o VIRT | grep $1
 }
