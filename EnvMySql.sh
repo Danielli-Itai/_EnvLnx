@@ -1,5 +1,5 @@
 #!/bin/bash
-#Coder apprentice environment entry.
+#MySql environment entry.
 echo "MySql environment."
 #https://docs.rackspace.com/support/how-to/install-mysql-server-on-the-ubuntu-operating-system/
 
