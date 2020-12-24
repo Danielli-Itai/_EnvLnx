@@ -28,6 +28,6 @@ RUN apt-get install -y mysql-client
 
 #Install python requrnments.
 ADD Docker/requirements.txt	/home/Docker/
-#RUN ./home/Docker/RequirementsDocker.sh
-RUN  pip install -r /home/Docker/requirements.txt
+RUN  pip3 install -r /home/Docker/requirements.txt
+
 
