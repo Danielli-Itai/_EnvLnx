@@ -89,7 +89,7 @@ function GitPull()
 function GitReset()
 {
 	cd $1
-	git reset --hard
+	sudo git reset --hard
 	sudo git pull
 	cd ..
 }
