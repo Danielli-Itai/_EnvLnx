@@ -70,6 +70,8 @@ source ./_EnvLnx/EnvMySql.sh
 source ./_EnvLnx/EnvNodeJs.sh
 source ./_EnvLnx/EnvSetup.sh
 
+source ./_EnvLnx/Docker/EnvDocker.sh
+
 
 
 
