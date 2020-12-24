@@ -1,6 +1,6 @@
 #!/bin/bash
 #Docker build environment.
-echo "EnvDocker - EnvDockerClear, EnvDockerBuild, EnvDockerRunIteract, EnvDockerRunDetached, EnvDockerSave, EnvDockerLoad"
+echo "EnvDocker - EnvDockerBuild, EnvDockerRunIteract, EnvDockerRunDetached, EnvDockerSave, EnvDockerLoad"
 
 
 
