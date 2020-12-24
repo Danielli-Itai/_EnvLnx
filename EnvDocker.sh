@@ -56,7 +56,10 @@ function DockerTest()
 
 
 
-#https://docs.docker.com
+
+
+#https://docs.docker.com, https://docs.docker.com/engine/reference/commandline/images/
+#-f ilter, -q only ID's, -a show all.
 echo "Docker commands: DockerImages, DockerBuild, DockerRunInteractive, DockerRemove, DockerClear, DockerClearAll"
 function DockerImages()
 {
@@ -85,8 +88,10 @@ function DockerRemove()
 	sudo docker rm $1
 }
 
+#Remove all instances and dangling images.
 function DockerClear()
 {
+	sudo docker rmi $(docker images -f "dangling=true" -q)
 	sudo docker rm $(sudo docker ps -a -q)
 }
 

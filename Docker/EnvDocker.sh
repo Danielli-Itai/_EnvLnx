@@ -17,6 +17,7 @@ export DOCKER_FILE=coder_app.base.tar
 
 function EnvDockerBuild()
 {
+	sudo chmod 777 -R ./Docker
 	sudo docker build -f ./Docker/Dockerfile -t $DOCKER_TAG .
 }
 
