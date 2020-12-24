@@ -40,6 +40,9 @@ function MySqlInstall()
 	sudo systemctl enable mysql
 }
 
+
+
+
 function MySqlRemove()
 {
 	sudo service mysql stop
@@ -64,6 +67,17 @@ function MySqlRemove()
 }
 
 
+#For checking root user has a password.
+#SELECT User, Host, authentication_string FROM mysql.user;
+
+#Update the root user password.
+#UPDATE mysql.user SET authentication_string=null WHERE User='root';
+#flush privileges;
+#UNINSTALL COMPONENT 'file://component_validate_password';
+#ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MySqlPassword';
+
+#For re-checking root user has a password.
+#SELECT User, Host, authentication_string FROM mysql.user;
 
 function MySqlPassword()
 {
@@ -85,6 +99,9 @@ function MySqlInfo()
 	echo "SHOW VARIABLES LIKE 'port';"
 	echo "SHOW VARIABLES LIKE 'mysqlx_port';"
 }
+
+
+
 
 function MySqlShell()
 {
