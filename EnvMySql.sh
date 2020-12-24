@@ -21,6 +21,9 @@ function MySqlInstall()
 	sudo dpkg -i mysql-apt-config_0.8.13-1_all.deb
 	
 	#Start installing MySQL
+	echo
+	echo "Password:MySqlPassword"
+	echo "Use legacy authentication method"
 	sudo apt-get install mysql-server
 	
 	# Adjust security to the MySQL Server.
@@ -43,7 +46,18 @@ function MySqlRemove()
 	sudo apt-get autoclean
 	sudo deluser --remove-home mysql
 	sudo delgroup mysql
-	sudo rm -rf /etc/apparmor.d/abstractions/mysql /etc/apparmor.d/cache/usr.sbin.mysqld /etc/mysql /var/lib/mysql /var/log/mysql* /var/log/upstart/mysql.log* /var/run/mysql
+	
+	sudo rm -rf /etc/apparmor.d/abstractions/mysql
+	sudo rm -rf /etc/apparmor.d/cache/usr.sbin.mysqld
+	sudo rm -rf /etc/mysql
+	sudo rm -rf /var/lib/mysql
+	sudo rm -rf /var/log/mysql*
+	sudo rm -rf /var/log/upstart/mysql.log*
+	sudo rm -rf /var/run/mysql
+	sudo rm -f /etc/init.d/mysql
+	
+	sudo mv /var/lib/dpkg/info/mysql* /tmp
+	sudo mv /var/lib/dpkg/info/libmysql* /tmp
 }
 
 
@@ -56,10 +70,14 @@ function MySqlPassword()
 
 function MySqlInfo()
 {
+	echo "MySql service:"
+	systemctl status mysql
+
 	echo "MySql Port:"
 	sudo netstat -tlnp | grep mysql
 
 	echo "run MySqlShell and use the following commands..."
+	echo "SET GLOBAL validate_password.policy=LOW;"
 	echo "Show databases;"
 	echo "SHOW VARIABLES LIKE 'port';"
 	echo "SHOW VARIABLES LIKE 'mysqlx_port';"
