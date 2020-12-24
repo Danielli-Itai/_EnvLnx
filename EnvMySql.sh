@@ -33,6 +33,9 @@ function MySqlInstall()
 	echo "Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y"
 	sudo mysql_secure_installation
 	
+	#install work bench.
+	sudo apt-get install -y mysql-workbench-community
+	
 	#Start it automatically at system startup.
 	sudo systemctl enable mysql
 }
