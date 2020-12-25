@@ -9,6 +9,9 @@ FROM ubuntu:18.04
 RUN apt update -y
 RUN apt install -y python3.8
 RUN apt install -y python3-pip
+RUN apt-get install -y python3-dev
+RUN apt-get install -y default-libmysqlclient-dev
+RUN apt-get install -y build-essential
 
 
 #Install NodeJs.
