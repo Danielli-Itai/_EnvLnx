@@ -1,17 +1,15 @@
+#bsed on Ubuntu 18.04
 FROM ubuntu:18.04
 
-#Server name.
-ENV MY_NAME="Coder Apprentice"
 
-#Server communication ports
-EXPOSE 80
-EXPOSE 3306
+
 
 
 #Run python installation.
 RUN apt update -y
 RUN apt install -y python3.8
 RUN apt install -y python3-pip
+
 
 #Install NodeJs.
 RUN apt update -y

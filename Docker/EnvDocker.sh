@@ -8,8 +8,8 @@ echo "EnvDocker - EnvDockerBuild, EnvDockerRunIteract, EnvDockerRunDetached, Env
 
 #Environment variables.
 #Docker Coder Apprentice tag.
-export DOCKER_TAG=coder_app/bsase:0.0.1
-export DOCKER_FILE=coder_app.base.tar
+export ENV_DOCKER_TAG=coder_app/bsase:latest
+export ENV_DOCKER_FILE=coder_app.base.tar
 
 
 
@@ -18,34 +18,34 @@ export DOCKER_FILE=coder_app.base.tar
 function EnvDockerBuild()
 {
 	sudo chmod 777 -R ./Docker
-	sudo docker build -f ./Docker/Dockerfile -t $DOCKER_TAG .
+	sudo docker build -f ./Docker/Dockerfile -t $ENV_DOCKER_TAG .
 }
 
 
 function EnvDockerRunInteract()
 {
-	sudo docker run -i  -t $DOCKER_TAG
+	sudo docker run -i  -t $ENV_DOCKER_TAG
 }
 
 
 function CAppDockerRunDetached()
 {
-	sudo docker run -t -d $DOCKER_TAG
+	sudo docker run -t -d $ENV_DOCKER_TAG
 }
 
 
 function CAppDockerExec()
 {
-	sudo docker exec -it $DOCKER_TAG bash
+	sudo docker exec -it $ENV_DOCKER_TAG bash
 }
 
 
 function CAppDockerSave()
 {
-	sudo docker save $DOCKER_TAG > $DOCKER_FILE
+	sudo docker save $ENV_DOCKER_TAG > $ENV_DOCKER_FILE
 }
 
 function CAppDockerLoad()
 {
-	sudo docker load < $DOCKER_FILE
+	sudo docker load < $ENV_DOCKER_FILE
 }
