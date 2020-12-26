@@ -3,22 +3,24 @@ FROM ubuntu:18.04
 
 
 
-
+#Linux installations
+RUN apt-get install -y aptutils
+RUN apt-get update -y
 
 #Run python installation.
-RUN apt update -y
-RUN apt install -y python3.8
-RUN apt install -y python3-pip
+RUN apt-get install -y python3.8
+RUN apt-get install -y python3-pip
 RUN apt-get install -y python3-dev
 RUN apt-get install -y default-libmysqlclient-dev
 RUN apt-get install -y build-essential
 
 
 #Install NodeJs.
-RUN apt update -y
-RUN apt install build-essential -y
-RUN apt install nodejs -y
-RUN apt install npm -y
+RUN apt-get update -y
+RUN apt-get install build-essential -y
+RUN apt-get install nodejs -y
+RUN apt-get install npm -y
+
 #Install Node Js dependencies.
 RUN npm install -g npm@latest
 
