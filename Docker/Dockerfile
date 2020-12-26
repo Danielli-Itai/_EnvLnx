@@ -35,5 +35,5 @@ RUN  sudo npm install -g npm@latest
 
 #Install MySql client.
 RUN sudo apt-get install -y mysql-client
-RUN sudo apt-get install libmysqlclient-dev
+RUN sudo apt-get install -y libmysqlclient-dev
 
