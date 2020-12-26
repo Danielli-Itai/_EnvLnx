@@ -3,6 +3,8 @@ FROM ubuntu:18.04
 
 
 
+
+
 #Linux installations
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -10,8 +12,22 @@ RUN apt update -y
 RUN apt upgrade -y
 RUN apt install -y apt-utils
 RUN apt-get -y install sudo
+
+
+#Install development tools.
+RUN sudo apt install -y nano
 RUN sudo apt-get install -y -q dialog
 RUN sudo apt-get install -y build-essential
+RUN sudo apt install -y git-all
+RUN	sudo apt-get install unrar
+
+
+
+#Remote connection tools.
+RUN sudo apt install -y net-tools
+RUN sudo apt install -y xrdp
+
+
 
 #Run python installation.
 RUN sudo apt update -y
