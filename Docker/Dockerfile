@@ -4,25 +4,33 @@ FROM ubuntu:18.04
 
 
 #Linux installations
-RUN apt-get install -y aptutils
-RUN apt-get update -y
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install -y apt-utils
+RUN apt-get -y install sudo
+RUN sudo apt-get install -y -q dialog
+RUN sudo apt-get install -y build-essential
 
 #Run python installation.
-RUN apt-get install -y python3.8
-RUN apt-get install -y python3-pip
-RUN apt-get install -y python3-dev
-RUN apt-get install -y default-libmysqlclient-dev
-RUN apt-get install -y build-essential
+RUN sudo apt update -y
+RUN sudo apt-get install -y python3.8
+RUN sudo apt-get install -y python3-pip
+RUN sudo apt-get install -y python3-dev
+RUN sudo apt-get install -y default-libmysqlclient-dev
 
 
 #Install NodeJs.
-RUN apt-get update -y
-RUN apt-get install build-essential -y
-RUN apt-get install nodejs -y
-RUN apt-get install npm -y
+RUN sudo apt-get update -y
+RUN sudo apt-get install -y -q nodejs
+RUN sudo apt-get install -y -q libssl1.0-dev
+RUN sudo apt-get install -y -q node-gyp
+RUN sudo apt-get install -y -q nodejs-dev
+RUN sudo apt-get install npm -y
 
 #Install Node Js dependencies.
-RUN npm install -g npm@latest
+RUN  sudo npm install -g npm@latest
 
 
 #Install MySql client.
