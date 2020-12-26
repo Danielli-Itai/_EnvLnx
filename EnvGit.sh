@@ -1,6 +1,6 @@
 #!/bin/bash
 #Keep linux End of line conversion.
-echo "Git environment: GitInstall, GitInformation, GitSetup, GitClone, GitPull, GitReset, GitOverride"
+echo "Git environment: GitInstall, GitInformation, GitSetup, GitClone, GitCommit, GitPull, GitReset, GitOverride"
 
 
 
@@ -71,6 +71,16 @@ function GitClone()
 	sudo git clone https://github.com/Danielli-Itai/$1.git
 	
 	sudo chmod -fR 777 $1
+}
+
+
+
+#commit Files chages.
+function GitCommit()
+{
+        sudo git stage .
+        sudo git commit
+        sudo git push
 }
 
 
