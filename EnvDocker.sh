@@ -79,6 +79,7 @@ function DockerBuild()
 #Run docker image tag.
 function DockerRunInteractive()
 {
+	echo "To detach a container and leave it running use CTRL-p CTRL-q "
 	sudo docker run -i -t $1 /bin/bash
 }
 
