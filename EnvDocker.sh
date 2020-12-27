@@ -91,7 +91,7 @@ function DockerRemove()
 #Remove all instances and dangling images.
 function DockerClear()
 {
-	sudo docker rmi $(docker images -f "dangling=true" -q)
+	sudo docker rmi $(sudo docker images -f "dangling=true" -q)
 	sudo docker rm $(sudo docker ps -a -q)
 }
 
