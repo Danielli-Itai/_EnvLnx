@@ -18,14 +18,14 @@ RUN apt-get -y install sudo
 RUN sudo apt install -y nano
 RUN sudo apt-get install -y -q dialog
 RUN sudo apt-get install -y build-essential
-RUN sudo apt install -y git-all
-RUN	sudo apt-get install unrar
+RUN sudo apt-get install -y git
+RUN	sudo apt-get install -y unrar
 
 
 
 #Remote connection tools.
-RUN sudo apt install -y net-tools
-RUN sudo apt install -y xrdp
+RUN sudo apt-get install -y net-tools
+RUN sudo apt-get install -y xrdp
 
 
 
