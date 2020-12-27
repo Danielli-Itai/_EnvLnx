@@ -25,7 +25,6 @@ RUN	sudo apt-get install -y unrar
 
 #Remote connection tools.
 RUN sudo apt-get install -y net-tools
-RUN sudo apt-get install -y xrdp
 
 
 
