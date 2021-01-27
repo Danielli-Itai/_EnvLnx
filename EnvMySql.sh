@@ -66,15 +66,16 @@ function MySqlRemove()
 	sudo mv /var/lib/dpkg/info/libmysql* /tmp
 }
 
+function MySqlHelp()
+{
+  echo For checking root user has a password.
+  echo >SELECT User, Host, authentication_string FROM mysql.user;
 
-#For checking root user has a password.
-#SELECT User, Host, authentication_string FROM mysql.user;
-
-#Update the root user password.
-#UPDATE mysql.user SET authentication_string=null WHERE User='root';
-#flush privileges;
-#UNINSTALL COMPONENT 'file://component_validate_password';
-#ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MySqlPassword';
+  echo Update the root user password.
+  echo mysql>UPDATE mysql.user SET authentication_string=null WHERE User='root';
+  echo mysql>flush privileges;
+  echo mysql>UNINSTALL COMPONENT 'file://component_validate_password';
+  echo mysql>ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MySqlPassword';
 
 #For re-checking root user has a password.
 #SELECT User, Host, authentication_string FROM mysql.user;
