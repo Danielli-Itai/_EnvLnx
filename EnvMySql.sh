@@ -76,7 +76,7 @@ function MySqlHelp()
   echo mysql>flush privileges;
   echo mysql>UNINSTALL COMPONENT 'file://component_validate_password';
   echo mysql>ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MySqlPassword';
-
+}
 #For re-checking root user has a password.
 #SELECT User, Host, authentication_string FROM mysql.user;
 
