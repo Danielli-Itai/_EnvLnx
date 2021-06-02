@@ -79,17 +79,17 @@ source ./_EnvLnx/Docker/EnvDocker.sh
 #SearchGit for environment setup files and call them.
 function EnvSetup()
 {
-    FILES=$1/*
+  FILES=$1/*
 	ENV_SETUP_FILE="EnvStar.sh"
 	
-    for f in $FILES
-    do
+  for f in $FILES
+  do
 	_FILE=$f/$ENV_SETUP_FILE
-	if test -f "$_FILE"; then
 	    echo "$_FILE exists."
 	    source $_FILE
 	fi
     done
 }
+
 #Call work directory environment setup files.
 #EnvSetup $WORK_DIR

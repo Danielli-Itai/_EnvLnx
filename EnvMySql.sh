@@ -125,3 +125,4 @@ function MySqlRunScript
 {
 	sudo mysql < $1
 }
+
