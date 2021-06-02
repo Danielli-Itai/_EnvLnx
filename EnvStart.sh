@@ -87,7 +87,7 @@ function EnvSetup()
 	_FILE=$f/$ENV_SETUP_FILE
 	    echo "$_FILE exists."
 	    source $_FILE
-	fi
+#	fi
     done
 }
 
