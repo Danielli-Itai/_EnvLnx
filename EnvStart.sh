@@ -66,6 +66,7 @@ source ./_EnvLnx/EnvDocker.sh
 source ./_EnvLnx/EnvGit.sh
 source ./_EnvLnx/EnvTools.sh
 source ./_EnvLnx/EnvPython.sh
+source ./_EnvLnx/EnvR.sh
 source ./_EnvLnx/EnvMySql.sh
 source ./_EnvLnx/EnvNodeJs.sh
 source ./_EnvLnx/EnvSetup.sh

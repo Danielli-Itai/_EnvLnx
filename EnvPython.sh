@@ -9,11 +9,18 @@ function PythonInstall()
 {
 	sudo apt update -y
 	sudo apt install software-properties-common
+	
 	sudo add-apt-repository ppa:deadsnakes/ppa
+	
 	sudo apt install python3.9
-	sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8
+	
+	sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9
+	
 	sudo apt install -y python3-pip
 	sudo python3 -m pip install --upgrade pip*
+	
+	sudo curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+	sudo sh Miniconda3-latest-Linux-x86_64.sh
 	
 	sudo apt-get install -y python3-tk
 }
