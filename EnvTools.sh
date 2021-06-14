@@ -28,3 +28,10 @@ function EnvToolsInstall()
 	sudo systemclt enable xrdp
 	sudo systemctl status xrdp
 }
+
+function EnvToolsJvm()
+{
+	sudo apt update -y
+	sudo apt install default-jdk -y
+	java -version
+}
