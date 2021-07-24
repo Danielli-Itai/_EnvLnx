@@ -10,7 +10,7 @@ echo "R environment: RInstall"
 function RInstall()
 {
 	sudo apt-get update
-	sudo apt install r-base
+	sudo apt install -y r-base
 }
 
 #Run R intewractive shell.

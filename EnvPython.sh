@@ -5,7 +5,7 @@
 
 
 
-function PythonInstall()
+function PyInstall()
 {
 	sudo apt update -y
 	sudo apt install software-properties-common
@@ -15,6 +15,7 @@ function PythonInstall()
 	sudo apt install python3.9
 	
 	sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9
+	sudo apt-get install -y python3-venv
 	
 	sudo apt install -y python3-pip
 	sudo python3 -m pip install --upgrade pip*
@@ -25,6 +26,25 @@ function PythonInstall()
 	sudo apt-get install -y python3-tk
 }
 
+function PyVenvNew()
+{
+	if $1
+	then
+		python3 -m venv immunedb
+	else
+		echo "Missing environment name"
+	fi
+}
+
+function PyVenvActiate()
+{
+	if $1
+	then
+		source immunedb/bin/activate
+	else
+		echo "Missing environment name"
+	fi
+}
 
 # Pull Python repository and Install.
 function PyClone()
