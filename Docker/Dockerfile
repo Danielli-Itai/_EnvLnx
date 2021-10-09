@@ -44,7 +44,7 @@ RUN sudo apt install -y -q nodejs
 RUN sudo apt install -y -q libssl1.0-dev
 RUN sudo apt install -y -q node-gyp
 #RUN sudo apt install -y -q nodejs-dev
-RUN sudo apt install -y -q npm
+#RUN sudo apt install -y -q npm
 
 #Install Node Js dependencies.
 #RUN  sudo npm install -g npm@latest
