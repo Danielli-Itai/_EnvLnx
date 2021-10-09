@@ -11,20 +11,20 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt update -y
 RUN apt upgrade -y
 RUN apt install -y apt-utils
-RUN apt-get -y install sudo
+RUN apt install -y sudo
 
 
 #Install development tools.
 RUN sudo apt install -y nano
-RUN sudo apt-get install -y -q dialog
-RUN sudo apt-get install -y build-essential
-RUN sudo apt-get install -y git
-RUN	sudo apt-get install -y unrar
+RUN sudo apt install -y -q dialog
+RUN sudo apt install -y build-essential
+RUN sudo apt install -y git
+RUN	sudo apt install -y unrar
 
 
 
 #Remote connection tools.
-RUN sudo apt-get install -y net-tools
+RUN sudo apt install -y net-tools
 
 
 
@@ -49,6 +49,5 @@ RUN  sudo npm install -g npm
 
 
 #Install MySql client.
-RUN sudo apt-get install -y mysql-client
-RUN sudo apt-get install -y libmysqlclient-dev
-
+RUN sudo apt install -y mysql-client
+RUN sudo apt install -y libmysqlclient-dev
