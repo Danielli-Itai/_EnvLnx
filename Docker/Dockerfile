@@ -38,6 +38,8 @@ RUN sudo apt install -y default-libmysqlclient-dev
 
 #Install NodeJs.
 RUN sudo apt update -y
+RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
+RUN sudo bash nodesource_setup.sh
 RUN sudo apt install -y -q nodejs
 RUN sudo apt install -y -q libssl1.0-dev
 RUN sudo apt install -y -q node-gyp
