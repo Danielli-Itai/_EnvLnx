@@ -20,7 +20,7 @@ RUN sudo apt install -y -q dialog
 RUN sudo apt install -y build-essential
 RUN sudo apt install -y git
 RUN	sudo apt install -y unrar
-
+RUN sudo apt install -y curl
 
 
 #Remote connection tools.
