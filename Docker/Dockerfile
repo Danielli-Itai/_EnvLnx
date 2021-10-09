@@ -30,22 +30,23 @@ RUN sudo apt-get install -y net-tools
 
 #Run python installation.
 RUN sudo apt update -y
-RUN sudo apt-get install -y python3.8
-RUN sudo apt-get install -y python3-pip
-RUN sudo apt-get install -y python3-dev
-RUN sudo apt-get install -y default-libmysqlclient-dev
+RUN sudo apt install -y python3.8
+RUN sudo apt install -y python3-pip
+RUN sudo apt install -y python3-dev
+RUN sudo apt install -y default-libmysqlclient-dev
 
 
 #Install NodeJs.
-RUN sudo apt-get update -y
-RUN sudo apt-get install -y -q nodejs
-RUN sudo apt-get install -y -q libssl1.0-dev
-RUN sudo apt-get install -y -q node-gyp
-RUN sudo apt-get install -y -q nodejs-dev
-RUN sudo apt-get install npm -y
+RUN sudo apt update -y
+RUN sudo apt install -y -q nodejs
+RUN sudo apt install -y -q libssl1.0-dev
+RUN sudo apt install -y -q node-gyp
+RUN sudo apt install -y -q nodejs-dev
+RUN sudo apt install -y -q npm
 
 #Install Node Js dependencies.
-#RUN  sudo npm install -g npm@latest
+RUN  sudo npm install -g npm
+
 
 #Install MySql client.
 RUN sudo apt-get install -y mysql-client
