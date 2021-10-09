@@ -45,7 +45,7 @@ RUN sudo apt install -y -q nodejs-dev
 RUN sudo apt install -y -q npm
 
 #Install Node Js dependencies.
-RUN  sudo npm install -g npm
+RUN  sudo npm install -g npm@latest
 
 
 #Install MySql client.
